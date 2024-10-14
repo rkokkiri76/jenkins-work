@@ -48,4 +48,4 @@ COPY admin-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 # USER jenkins
 
 # RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
-# RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
