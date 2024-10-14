@@ -61,10 +61,10 @@ RUN echo '#!/bin/bash' > /usr/local/bin/install-plugins.sh && \
 RUN /usr/local/bin/install-plugins.sh
 
 
-RUN chown -R jenkins:jenkins /var/jenkins_home
+# RUN chown -R jenkins:jenkins /var/jenkins_home
 
 
-USER jenkins
+# USER jenkins
 
 # RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
 # RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
