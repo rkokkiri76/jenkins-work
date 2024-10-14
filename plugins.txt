@@ -1,1 +1,1 @@
-job-dsl
+job-dsl:latest
