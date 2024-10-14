@@ -29,6 +29,7 @@ docker image rm jenkins
 cd /test-jenkins/jenkins-work
 cd  /jenkins_home/; rm -rf .cache .java .lastStarted .bash_history *;cd -
 
+git pull
 
 docker build -t jenkins .
 docker run -d -p 8080:8080 -v /jenkins_home:/var/jenkins_home  -e JENKINS_ADMIN_ID=jenkins -e JENKINS_ADMIN_PASSWORD=jenkins --name jenkins jenkins
