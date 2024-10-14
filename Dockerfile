@@ -42,29 +42,10 @@ COPY admin-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 # COPY config/ssh-keys/cd-demo /usr/share/jenkins/ref/.ssh/id_rsa
 # COPY config/ssh-keys/cd-demo.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
 
-# Create a custom install-plugins.sh script
-RUN echo '#!/bin/bash' > /usr/local/bin/install-plugins.sh && \
-    echo 'set -e' >> /usr/local/bin/install-plugins.sh && \
-    echo 'if [ ! -f /usr/share/jenkins/ref/plugins.txt ]; then' >> /usr/local/bin/install-plugins.sh && \
-    echo '  echo "plugins.txt not found!"' >> /usr/local/bin/install-plugins.sh && \
-    echo '  exit 1' >> /usr/local/bin/install-plugins.sh && \
-    echo 'fi' >> /usr/local/bin/install-plugins.sh && \
-    echo 'while IFS= read -r plugin; do' >> /usr/local/bin/install-plugins.sh && \
-    echo '  if [ -n "$plugin" ]; then' >> /usr/local/bin/install-plugins.sh && \
-    echo '    echo "Installing $plugin..."' >> /usr/local/bin/install-plugins.sh && \
-    echo '    jenkins-plugin-cli --plugins "$plugin"' >> /usr/local/bin/install-plugins.sh && \
-    echo '  fi' >> /usr/local/bin/install-plugins.sh && \
-    echo 'done < /usr/share/jenkins/ref/plugins.txt' >> /usr/local/bin/install-plugins.sh && \
-    chmod +x /usr/local/bin/install-plugins.sh
-
-# Run the custom plugin installation script
-RUN /usr/local/bin/install-plugins.sh
-
-
 # RUN chown -R jenkins:jenkins /var/jenkins_home
 
 
 # USER jenkins
 
 # RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
-# RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
