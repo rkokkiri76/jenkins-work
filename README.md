@@ -31,7 +31,7 @@ cd  /jenkins_home/; rm -rf .cache .java .lastStarted .bash_history *;cd -
 
 
 docker build -t jenkins .
-docker run -d -p 8080:8080 -v /jenkins_home:/var/jenkins_home --name jenkins jenkins
+docker run -d -p 8080:8080 -v /jenkins_home:/var/jenkins_home  -e JENKINS_ADMIN_ID=jenkins -e JENKINS_ADMIN_PASSWORD=jenkins --name jenkins jenkins
 
 
 
