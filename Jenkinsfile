@@ -11,7 +11,7 @@ node {
     stage('three') {
       echo "stage - 3"
                   env.each { key, value ->
-                        echo "${key} = ${value}"
+                        echo "key :  ${key} =  and its value is  ${value}"
                     }
   }
 }
