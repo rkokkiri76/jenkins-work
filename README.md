@@ -20,8 +20,16 @@ cd /;mkdir /jenkins_home
 
 git clone https://github.com/rkokkiri76/jenkins-work.git
 
+
+docker image rm jenkins
+
+docker container rm -f jenkins
+cd /test-jenkins/jenkins-work
+cd  /jenkins_home/; rm -rf .cache .java .lastStarted *;cd -
+
+
 docker build -t jenkins .
-docker run -p=8080:8080 -v /jenkins_home:/var/jenkins_home j--name jenkins jenkins
+docker run -d -p 8080:8080 -v /jenkins_home:/var/jenkins_home --name jenkins jenkins
 
 
 
