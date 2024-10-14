@@ -34,7 +34,7 @@ COPY plugins.txt /usr/share/jenkins/ref/
 # COPY config/hudson.tasks.Maven.xml /usr/share/jenkins/ref/hudson.tasks.Maven.xml
 # COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/maven-global-settings-files.xml
 COPY config/*  /usr/share/jenkins/ref/
-COPY admin-user/* /usr/share/jenkins/ref/init.groovy.d/
+# COPY admin-user/* /usr/share/jenkins/ref/init.groovy.d/
 
 # SSH Keys & Credentials
 # COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
@@ -47,4 +47,4 @@ RUN chown -R jenkins:jenkins /var/jenkins_home
 USER jenkins
 
 # RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
-# RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
