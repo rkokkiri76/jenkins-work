@@ -10,7 +10,8 @@ node {
   }
     stage('three') {
       echo "stage - 3"
-      echo "branch name ${env.BRANCH}"
-      echo "all environment varaiblea ${env}"
+                  env.each { key, value ->
+                        echo "${key} = ${value}"
+                    }
   }
 }
