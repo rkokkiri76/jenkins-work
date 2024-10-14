@@ -45,3 +45,5 @@ docker  container logs jenkins -f
 docker exec -it jenkins bash
 
 http://192.168.2.82:8080/login?from=%2F
+
+
