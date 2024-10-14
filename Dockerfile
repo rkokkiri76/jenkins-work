@@ -1,19 +1,19 @@
-FROM jenkins:2.480
+FROM jenkins/jenkins:latest
 
 
-ARG user=jenkins
-ARG group=jenkins
+# ARG user=jenkins
+# ARG group=jenkins
 
-ARG uid=1000
-ARG gid=1000
+# ARG uid=1000
+# ARG gid=1000
 
 
 
-USER jenkins
+# USER jenkins
 
 
 COPY plugins.txt /var/jenkins_home/plugins.txt
-RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
+# RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
 
 # Adding default Jenkins Jobs
 COPY jobs/1-github-seed-job.xml /usr/share/jenkins/ref/jobs/1-github-seed-job/config.xml
