@@ -17,7 +17,7 @@ COPY jobs/3-conference-app-seed-job.xml /usr/share/jenkins/ref/jobs/3-conference
 # Jenkins Settings, i.e. Maven, Groovy, ...
 # COPY config/hudson.tasks.Maven.xml /usr/share/jenkins/ref/hudson.tasks.Maven.xml
 # COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/maven-global-settings-files.xml
-COPY config/hudson.plugins.groovy.Groovy.xml /usr/share/jenkins/ref/hudson.plugins.groovy.Groovy.xml
+COPY config/* /usr/share/jenkins/ref/
 
 # SSH Keys & Credentials
 # COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
