@@ -35,7 +35,7 @@ COPY plugins.txt /usr/share/jenkins/ref/
 # COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/maven-global-settings-files.xml
 COPY config/*  /usr/share/jenkins/ref/
 COPY admin-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
-# COPY admin-user/* /usr/share/jenkins/ref/init.groovy.d/
+COPY admin-user/install-plugins.groovy    /usr/share/jenkins/ref/init.groovy.d/
 
 # SSH Keys & Credentials
 # COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
