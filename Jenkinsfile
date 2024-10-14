@@ -10,12 +10,6 @@ node {
   }
     stage('three') {
       echo "stage - 3"
-                  env.each { key, value ->
-                          if (value) {
-                echo "${key} = ${value}"
-            } else {
-                echo "${key} = (empty or null)"
-            }
-                    }
+        echo sh(script: 'env|sort', returnStdout: true)
   }
 }
