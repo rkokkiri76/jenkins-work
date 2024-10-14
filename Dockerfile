@@ -16,7 +16,7 @@ USER root
 
 
 
-COPY plugins.txt /var/jenkins_home/plugins.txt
+COPY plugins.txt /usr/share/jenkins/ref/
 
 
 # Adding default Jenkins Jobs
