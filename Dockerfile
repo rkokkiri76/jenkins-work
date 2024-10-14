@@ -1,4 +1,4 @@
-FROM jenkins:2.480
+FROM jenkins/jenkins:latest
 
 
 ARG user=jenkins
