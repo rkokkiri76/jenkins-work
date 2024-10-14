@@ -17,7 +17,7 @@ USER root
 
 
 COPY plugins.txt /var/jenkins_home/plugins.txt
-# RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
+
 
 # Adding default Jenkins Jobs
 # COPY jobs/1-github-seed-job.xml /usr/share/jenkins/ref/jobs/1-github-seed-job/config.xml
@@ -43,4 +43,8 @@ COPY admin-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 RUN chown -R jenkins:jenkins /var/jenkins_home
 
+
 USER jenkins
+
+RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
+# RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
