@@ -12,7 +12,7 @@ FROM jenkins/jenkins:latest
 # USER jenkins
 
 USER root
-RUN chown -R jenkins:jenkins /var/jenkins_home
+
 
 
 
@@ -40,5 +40,7 @@ COPY admin-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 # COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
 # COPY config/ssh-keys/cd-demo /usr/share/jenkins/ref/.ssh/id_rsa
 # COPY config/ssh-keys/cd-demo.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
+
+RUN chown -R jenkins:jenkins /var/jenkins_home
 
 USER jenkins
