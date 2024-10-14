@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stage {
+  stages {
     stage {
       steps {
         sh 'echo "from declarative pipeline"'
