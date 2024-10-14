@@ -1,5 +1,17 @@
 FROM jenkins:2.480
 
+
+ARG user=jenkins
+ARG group=jenkins
+
+ARG uid=1000
+ARG gid=1000
+
+
+
+USER jenkins
+
+
 COPY plugins.txt /var/jenkins_home/plugins.txt
 RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
 
