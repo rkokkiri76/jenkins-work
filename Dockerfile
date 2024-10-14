@@ -11,6 +11,10 @@ FROM jenkins/jenkins:latest
 
 # USER jenkins
 
+USER root
+RUN chown -R jenkins:jenkins /var/jenkins_home
+USER jenkins
+
 
 COPY plugins.txt /var/jenkins_home/plugins.txt
 # RUN /usr/local/bin/plugins.sh /var/jenkins_home/plugins.txt
