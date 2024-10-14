@@ -21,7 +21,7 @@ cd /;mkdir /jenkins_home
 git clone https://github.com/rkokkiri76/jenkins-work.git
 
 docker build -t jenkins .
-docker run -p=8080:8080 -v /jenkins_home:/var/jenkins_home jenkins
+docker run -p=8080:8080 -v /jenkins_home:/var/jenkins_home j--name jenkins jenkins
 
 
 

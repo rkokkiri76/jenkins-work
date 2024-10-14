@@ -13,7 +13,7 @@ FROM jenkins/jenkins:latest
 
 USER root
 RUN chown -R jenkins:jenkins /var/jenkins_home
-USER jenkins
+
 
 
 COPY plugins.txt /var/jenkins_home/plugins.txt
@@ -33,9 +33,12 @@ COPY plugins.txt /var/jenkins_home/plugins.txt
 # Jenkins Settings, i.e. Maven, Groovy, ...
 # COPY config/hudson.tasks.Maven.xml /usr/share/jenkins/ref/hudson.tasks.Maven.xml
 # COPY config/maven-global-settings-files.xml /usr/share/jenkins/ref/maven-global-settings-files.xml
-COPY config/* /usr/share/jenkins/ref/
+COPY config/*  /usr/share/jenkins/ref/
+COPY adming-user/create-admin-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # SSH Keys & Credentials
 # COPY config/credentials.xml /usr/share/jenkins/ref/credentials.xml
 # COPY config/ssh-keys/cd-demo /usr/share/jenkins/ref/.ssh/id_rsa
 # COPY config/ssh-keys/cd-demo.pub /usr/share/jenkins/ref/.ssh/id_rsa.pub
+
+USER jenkins
