@@ -47,3 +47,18 @@ docker exec -it jenkins bash
 http://192.168.2.82:8080/login?from=%2F
 
 ################################################################################
+
+pipelines are two types
+1. declarative pipeline  -test-multibranch  develop
+
+2. scripted pipeline  -  test-multibranch   master
+
+Jenkinsfile  style decides which pipeline is
+
+
+multibranch pipeline, this is used to scan the all branches in the repo whose have Jenkinsfile then that will create and build first time. we can do auto trigger as using webhook.
+
+multibranch with defaults , this pipeline take global Jenkinsfile so if the repo one of the branch dont have Jenkinsfile also will create during the scan.
+
+
+# ===============================================================================
