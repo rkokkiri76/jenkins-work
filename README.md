@@ -46,4 +46,4 @@ docker exec -it jenkins bash
 
 http://192.168.2.82:8080/login?from=%2F
 
-
+this will create the jenkins with default jobs seed jobs
